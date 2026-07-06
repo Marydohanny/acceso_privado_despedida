@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Acceso a mi corazón ❤️</title>
+<link rel="stylesheet" href="css/estilo.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-- Pantalla PIN -->
+<div class="contenedor" id="pantallaPin">
+    <div class="titulo">🔐 Acceso privado a mi corazón</div>
+    <p>💭 Pista: Una fecha especial…</p>
+
+    <input type="password" id="pinInput" maxlength="6" placeholder="❤️❤️❤️❤️❤️❤️">
+    <br>
+    <button id="btn" onclick="verificarPin()">Desbloquear</button>
+    <div class="mensaje" id="mensaje"></div>
+    <div class="contador" id="contador"></div>
+</div>
+
+<!-- Pantalla sorpresa -->
+<div class="contenedor oculto" id="sorpresa">
+    <h1>Te Quiero Muchisimo ❤️</h1>
+    <p>Eres mi persona favorita ✨</p>
+    <p>Mejora todos los días ⚡</p>
+    <p>Gracias por existir y hacerme reir. 💖</p>
+    <button id="btn2" onclick="VerMomentos()">Algunos Recuerdos Juntos</button>
+</div>
+
+<!-- Pantalla momentos -->
+<div class="contenedor oculto" id="momentos">
+    <h2>Nuestros Momentos 💕</h2>
+    <p>🌸 Nuestro primer recuerdo juntos.</p>
+    <p>✨ Las risas que compartimos.</p>
+    <p>💖 Cada instante a tu lado es especial.</p>
+</div>
+
+<!-- SECCIÓN COMPLETA DE FOTOS -->
+<div id="seccionFotos" class="oculto">
+
+    <div class="contenedor">
+        <h2>Nuestros Recuerdos 📸💞</h2>
+    </div>
+
+    <div class="galeria">
+        <img src="img/foto1.jpeg" alt="Foto 1">
+        <img src="img/foto2.jpeg" alt="Foto 2">
+        <img src="img/foto3.jpeg" alt="Foto 3">
+        <img src="img/foto4.jpeg" alt="Foto 4">
+        <img src="img/foto5.jpeg" alt="Foto 5">
+        <img src="img/foto6.jpeg" alt="Foto 6">
+        <img src="img/foto7.jpeg" alt="Foto 7">
+        <img src="img/foto8.jpeg" alt="Foto 8">
+        <img src="img/foto9.jpeg" alt="Foto 9">
+        <img src="img/foto10.jpeg" alt="Foto 10">
+        <img src="img/foto11.jpeg" alt="Foto 11">
+        <img src="img/foto12.jpeg" alt="Foto 12">
+        <img src="img/foto13.jpeg" alt="Foto 13">
+        <img src="img/foto19.jpeg" alt="Foto 14">
+        <img src="img/foto15.jpeg" alt="Foto 15">
+        <img src="img/foto16.jpeg" alt="Foto 16">
+        <img src="img/foto17.jpeg" alt="Foto 17">
+        <img src="img/foto18.jpeg" alt="Foto 18">
+        <img src="img/foto14.jpeg" alt="Foto 19">
+        <img src="img/foto20.jpeg" alt="Foto 20">
+        <img src="img/foto21.jpeg" alt="Foto 21">
+        <img src="img/foto22.jpeg" alt="Foto 22">
+        <img src="img/foto23.jpeg" alt="Foto 23">
+        <img src="img/foto24.jpeg" alt="Foto 24">
+    <!--<img src="ïmg/foto25.jpeg" alt="Foto 25">-->
+    
+    </div>
+    <button id="btn3" onclick="VerFinal()">Mi Pensamiento</button>
+</div>
+
+<div id="pantallaFinal" class="oculto">
+    <h2>💖 Mi Pensamiento 💖</h2>
+        <div id="fotoRetoque" class="foto-retoque">
+        <img src="img/foto25.jpeg" alt="Foto especial" id="imagenFinal">
+    </div>
+   
+
+    <!----<p>Gracias por estar en mi vida ❤️</p>--->
+    <!-- Contenido de la pantalla final aquí -->
+      <p id="textoPensamiento"></p>
+    <button id="btn4" onclick="irDespedida()">
+        💌 Tengo algo más que decirte...
+    </button>
+    <!-- Pie de página con contador -->
+     
+    <footer id="contadorFooter">
+        <div id="contadorFinal">Cargando...</div>
+    </footer>
+
+</div>
+<script src="js/script.js"></script>
+
+</body>
+</html>

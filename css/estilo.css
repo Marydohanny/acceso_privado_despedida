@@ -1,0 +1,259 @@
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+    font-family: Arial, sans-serif;
+    color:white;
+    overflow:hidden;
+}
+
+.contenedor{
+    background: rgba(233, 132, 132, 0.05);
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+    backdrop-filter: blur(10px);
+    position:relative;
+}
+
+input{
+    padding:12px;
+    font-size:20px;
+    border-radius:10px;
+    border:2px solid #ff4d6d;
+    background:transparent;
+    color:white;
+    text-align:center;
+    letter-spacing:5px;
+    outline:none;
+    box-shadow: 0 0 15px #ff4d6d;
+}
+
+button{
+    padding:12px 25px;
+    font-size:16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#ff4d6d;
+    color:white;
+    margin-top:15px;
+    position:relative;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff1e4d;
+}
+
+.mensaje{
+    margin-top:15px;
+    color:#ff9fb3;
+    min-height:20px;
+}
+
+.heart-float{
+    position:absolute;
+    color:#ff4d6d;
+    animation: float 3s linear infinite;
+}
+
+@keyframes float{
+    0%{ transform: translateY(0px); opacity:1; }
+    100%{ transform: translateY(-80px); opacity:0; }
+}
+
+.contador{
+    font-size:40px;
+    margin-top:20px;
+    display:none;
+}
+
+.oculto{
+    display:none;
+
+}
+
+.titulo{
+    font-size:22px;
+    margin-bottom:15px;
+    color:#ff9fb3;
+}
+
+.oculto{
+    display: none;
+    background-color: #ff1e4d;
+}
+
+#btn2{
+    margin-top: 20px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff6fb5, #ff1493);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+}
+
+#btn:hover{
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 20, 147, 0.6);
+}
+/*   FOTOS ANIMACION   */
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 columnas */
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.galeria img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%; /* 🔥 las hace circulares */
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    animation: flotar 3s ease-in-out infinite;
+}
+
+/* efecto al tocar */
+.galeria img:hover{
+    animation: none; /*Pausamos la flotacion*/
+    transform: scale(1.5);
+}
+
+/* animación flotante */
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ANIMACION DE AGRANDAR LA IMAGEN*/
+/* Fondo oscuro */
+.visor{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Imagen grande */
+.visor img{
+    max-width: 95vw;
+    height: auto;
+    max-height: 95vh;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.6);
+    animation: zoomIn 0.5s ease;
+}
+
+/* Animación */
+@keyframes zoomIn{
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+
+}
+
+/*Boton 3*/
+#btn3{
+    display: block;       /* permite que margin auto funcione */
+    margin: 20px auto 0;  /* 20px arriba, auto a los lados, 0 abajo */
+    /*margin-top: 20px auto;*/
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #ff6fb5, #ff1493);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+}
+
+/*Ultima pantalla*/
+#pantallaFinal {
+    position: relative;      /* necesario para ubicar el footer dentro */
+    min-height: 400px;       /* ajustar según tu contenido */
+    text-align: center;
+    padding-bottom: 60px;    /* espacio para el footer */
+}
+
+#contadorFooter {
+    position: absolute;
+    bottom: 10px;            /* a 10px del borde inferior */
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #ff1493;
+    font-weight: bold;
+}
+/*****************Ultima pantalla*****************/
+#pantallaFinal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    padding: 40px;
+    border-radius: 25px;
+    color: #ffe0e9;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    max-width: 400px;
+    z-index: 2;
+    box-shadow: 0 0 30px #ff4d6d;
+}
+
+#pantallaFinal h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #ff9fb3;
+}
+
+#pantallaFinal p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fff0f5;
+}
+
+#contadorFooter {
+    margin-top: 25px;
+    font-size: 16px;
+    color: #ffccd5;
+}
+/**********foto y gif ultima pantalla********/
+.foto-retoque {
+    position: relative;
+    width: 205px;
+    height: 205px;
+    margin: 20px auto;
+    border-radius: 20px; 
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 150, 0.5); 
+    filter: contrast(1.2) saturate(1.3); 
+    animation: zoomIn 1.5s ease-out;
+}
+
+.foto-retoque img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
